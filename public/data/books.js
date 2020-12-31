@@ -1,3 +1,4 @@
+/* eslint-disable strict */
 const books = [
   {
     id: "5f447132d487bd81da01e25e",

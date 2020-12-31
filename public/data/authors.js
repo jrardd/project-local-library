@@ -1,3 +1,4 @@
+/* eslint-disable strict */
 const authors = [
   {
     id: 0,
