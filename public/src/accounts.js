@@ -24,9 +24,9 @@ function getBooksPossessedByAccount(account, books, authors) {
     const { id, title, genre, borrows } = book;
     for (let j = 0; j < borrows.length; j++) {
       if (borrows[j].id === account.id && borrows[j].returned === false) {
-        for (let k = 0; k < authors.length; k++) {
-          let author = authors[k];
-          if (author.id === book.authorId) {
+        for (let num in authors) {
+          let author = authors[num];
+          if (author.id == book.authorId) {
             let tempBook = { id, title, genre, author, borrows };
             possessedBooks.push(tempBook);
           }

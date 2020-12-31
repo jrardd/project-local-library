@@ -38,11 +38,6 @@ function getMostPopularBooks(books) {
   return sortArray(bookCounts).splice(0, 5);
 }
 
-/* 
-Returns array of objects representing the top 5 authors with the most borrows, in order from greatest to least.
-getMostPopularAuthors(books[], authors[])
-returns: Array of objects {name:, count:}
-*/
 function getMostPopularAuthors(books, authors) {
   const authorObjects = authors.map((author) => {
     return {
@@ -60,12 +55,12 @@ function getMostPopularAuthors(books, authors) {
     currentAuthorObject.count += books[i].borrows.length;
   }
   let result = sortArray(authorObjects).splice(0, 5);
-  console.log(result);
   return result.map((author) => {
     return { name: author.name, count: author.count };
   });
 }
 
+//helper function
 function sortArray(array) {
   let sorted = array.sort((one, two) => (one.count < two.count ? 1 : -1));
   return sorted;
